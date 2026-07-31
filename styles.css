@@ -132,3 +132,160 @@ footer{grid-template-columns:1fr 1fr;padding:50px 18px}
 .loading-ui{position:absolute;z-index:50;left:50%;bottom:5vh;width:min(520px,72vw);transform:translateX(-50%);opacity:0}.playing .loading-ui{animation:loadingIn .25s 2.95s forwards}.loading-ui>div:first-child{display:flex;justify-content:space-between;margin-bottom:8px;font:800 9px monospace;letter-spacing:.2em}.loading-ui b{color:var(--cyan)}.loading-track{height:11px;padding:2px;border:1px solid #ffffffb8;background:#050308d1;box-shadow:0 0 12px #00eaff6b,inset 0 0 5px #000}.loading-track i{display:block;width:0;height:100%;background:repeating-linear-gradient(90deg,var(--cyan) 0 22px,var(--orange) 22px 44px,var(--coral) 44px 66px);box-shadow:0 0 9px var(--coral),0 0 20px #b026ff8c}.tools button{border:0;background:none;color:var(--muted);cursor:pointer}
 @keyframes bootFlash{0%{opacity:1}8%{opacity:0}21%{opacity:.17}24%,100%{opacity:0}}@keyframes studioCard{0%{opacity:0;filter:blur(5px);transform:scale(.98)}15%,66%{opacity:1;filter:none;transform:none}76%{opacity:1;filter:blur(1px)}100%{opacity:0;filter:blur(8px);transform:scale(1.03)}}@keyframes cornerIn{to{opacity:.7}}@keyframes cornerOut{to{opacity:0}}@keyframes dropTitleIn{to{opacity:1;transform:scale(1) rotate(-1deg)}}@keyframes dropTitleOut{0%{opacity:1;filter:none}12%{filter:brightness(3)}100%{opacity:0;filter:blur(8px);transform:scale(1.13) rotate(-1deg)}}@keyframes revealOn{to{opacity:1}}@keyframes unlockIn{to{opacity:1}}@keyframes purpleSlam{to{transform:translate(-38%,-48%) rotate(-6deg)}}@keyframes miamiSlam{to{transform:translate(38%,-45%) rotate(6deg)}}@keyframes productFloat{50%{margin-top:-12px;transform:translate(-38%,-48%) rotate(-4deg)}}@keyframes productFloat2{50%{margin-top:12px;transform:translate(38%,-45%) rotate(4deg)}}@keyframes loadingIn{to{opacity:1}}@keyframes noiseShift{0%{transform:translate(0)}25%{transform:translate(3%,-2%)}50%{transform:translate(-2%,3%)}75%{transform:translate(2%,2%)}100%{transform:translate(-3%,-3%)}}
 @media(max-width:800px){#replay{display:none}.drop-title p{font-size:16vw}.drop-title strong{font-size:11vw}.title-block{width:92vw;height:26vw}.reveal-shirt{width:63vw}.reveal-purple{left:19%}.reveal-miami{right:19%}.unlock-copy strong{font-size:21vw}.loading-ui{width:78vw}@keyframes purpleSlam{to{transform:translate(-21%,-60%) rotate(-7deg)}}@keyframes miamiSlam{to{transform:translate(21%,-20%) rotate(7deg)}}@keyframes productFloat{50%{margin-top:-8px;transform:translate(-21%,-60%) rotate(-5deg)}}@keyframes productFloat2{50%{margin-top:8px;transform:translate(21%,-20%) rotate(5deg)}}}
+
+/* RNS DROP 02 — layout and reveal refinement v4 */
+
+/* Keep the product artwork faithful during the intro. Multiply was darkening it. */
+.reveal-shirt{
+  isolation:isolate;
+  background:rgba(9,7,13,.78);
+  box-shadow:0 30px 90px #000c,0 0 34px rgba(176,38,255,.18);
+}
+.reveal-shirt img{
+  display:block;
+  width:100%;
+  mix-blend-mode:normal;
+  filter:brightness(1.08) saturate(1.06) contrast(1.02)
+    drop-shadow(0 24px 24px rgba(0,0,0,.72));
+}
+.reveal-purple img{
+  filter:brightness(1.1) saturate(1.08)
+    drop-shadow(-9px 0 16px rgba(176,38,255,.34))
+    drop-shadow(0 24px 24px rgba(0,0,0,.72));
+}
+.reveal-miami img{
+  filter:brightness(1.08) saturate(1.08)
+    drop-shadow(-9px 0 16px rgba(0,234,255,.3))
+    drop-shadow(9px 0 18px rgba(255,122,47,.28))
+    drop-shadow(0 24px 24px rgba(0,0,0,.72));
+}
+
+/* The color panels now arrive first, followed by the title copy. */
+.drop-title{
+  opacity:1;
+  transform:none;
+}
+.drop-title p,
+.drop-title strong,
+.drop-title>span,
+.drop-title .title-block{
+  opacity:0;
+}
+.playing .drop-title{
+  animation:dropSequenceOut .62s 5.15s cubic-bezier(.7,0,.9,.3) both;
+}
+.playing .drop-title .title-block.aqua{
+  animation:aquaPanelIn .5s 2.7s cubic-bezier(.12,.8,.18,1.08) both;
+}
+.playing .drop-title .title-block.orange{
+  animation:orangePanelIn .5s 2.88s cubic-bezier(.12,.8,.18,1.08) both;
+}
+.playing .drop-title p{
+  animation:dropCopyIn .42s 3.15s cubic-bezier(.12,.8,.18,1.08) both;
+}
+.playing .drop-title strong{
+  animation:dropCopyIn .42s 3.35s cubic-bezier(.12,.8,.18,1.08) both;
+}
+.playing .drop-title>span{
+  animation:dropCopyIn .35s 3.58s ease-out both;
+}
+@keyframes aquaPanelIn{
+  from{opacity:0;transform:translate(-125vw,-50%) skew(-9deg)}
+  to{opacity:1;transform:translate(-50%,-50%) skew(-9deg)}
+}
+@keyframes orangePanelIn{
+  from{opacity:0;transform:translate(75vw,-50%) skew(-9deg)}
+  to{opacity:1;transform:translate(-50%,-50%) skew(-9deg)}
+}
+@keyframes dropCopyIn{
+  from{opacity:0;filter:blur(8px);transform:translateY(16px) scale(.94)}
+  to{opacity:1;filter:none}
+}
+@keyframes dropSequenceOut{
+  0%{opacity:1;filter:none;transform:scale(1)}
+  12%{filter:brightness(3)}
+  100%{opacity:0;filter:blur(8px);transform:scale(1.13)}
+}
+
+/* Desktop hero: copy owns the left column; garments own the right. */
+.title{
+  left:4vw;
+  top:27%;
+  z-index:4;
+  width:36vw;
+  max-width:610px;
+}
+.title p{
+  text-shadow:0 0 13px rgba(0,234,255,.34);
+}
+.title h2{
+  font-size:clamp(54px,6.25vw,108px);
+  line-height:.82;
+  letter-spacing:-.065em;
+  text-shadow:0 0 18px rgba(255,248,255,.14),0 0 44px rgba(176,38,255,.3);
+}
+.title h2 em{
+  display:inline-block;
+  font-size:.82em;
+  line-height:.9;
+  -webkit-text-stroke:1px #ff2d95;
+  filter:drop-shadow(0 0 9px rgba(255,45,149,.65))
+    drop-shadow(0 0 24px rgba(176,38,255,.45));
+}
+.stage{
+  left:43%;
+  right:1.5%;
+  top:10%;
+  bottom:12%;
+  z-index:3;
+}
+.shirt{
+  filter:drop-shadow(0 35px 35px #000b)
+    drop-shadow(0 0 18px rgba(176,38,255,.12));
+}
+.shirt img{
+  mix-blend-mode:normal;
+  filter:brightness(1.04) saturate(1.04);
+}
+.s1{
+  right:1%;
+  top:0;
+  width:min(31vw,520px);
+}
+.s2{
+  left:0;
+  top:22%;
+  width:min(28vw,470px);
+}
+
+@media (max-width:1000px) and (min-width:801px){
+  .title{width:39vw;top:25%}
+  .title h2{font-size:clamp(50px,6.7vw,78px)}
+  .stage{left:40%}
+  .s1{right:-3%;width:38vw}
+  .s2{left:3%;width:33vw}
+}
+
+@media(max-width:800px){
+  .title{
+    left:18px;
+    right:18px;
+    top:13%;
+    width:auto;
+    max-width:none;
+  }
+  .title h2{
+    font-size:15vw;
+    line-height:.82;
+  }
+  .stage{
+    left:0;
+    right:0;
+    top:29%;
+    bottom:16%;
+  }
+  .s1{right:-9%;top:5%;width:74vw}
+  .s2{left:-8%;top:27%;width:64vw}
+  .drop-title>span{margin-top:20px}
+  .reveal-shirt img{filter:brightness(1.08) saturate(1.06)}
+}
