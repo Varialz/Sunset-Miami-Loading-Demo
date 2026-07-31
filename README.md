@@ -1,12 +1,19 @@
-# RNS Miami Arcade Drop Demo
+# RNS Performance — VTEC Shai Drop 02 Demo
 
-Static HTML/CSS/JS concept for the RNS Performance new-arrivals landing page.
+Static GitHub Pages demo with a ten-second Miami crime-game-inspired title sequence.
 
-## GitHub Pages
+## Launch sequence
 
-1. Create a new GitHub repository.
-2. Upload everything in this folder to the repository root.
-3. Open **Settings → Pages**.
-4. Select **Deploy from a branch**, choose `main` and `/ (root)`, then save.
+- 0–1 sec: black CRT boot and flash
+- 1–3 sec: `RNS PERFORMANCE PRESENTS`
+- 3–5 sec: aqua/orange `VTEC SHAI — 2ND DROP`
+- 5–8 sec: title breaks apart and both shirts enter
+- 8–10 sec: `NEW ARRIVALS UNLOCKED` and storefront handoff
 
-Replace product links, prices, and copy in `index.html`. Animation timing and the loading messages are in `script.js`.
+## Deploy to GitHub Pages
+
+1. Upload `index.html`, `styles.css`, `script.js`, and the `assets` folder to the root of a GitHub repository.
+2. Open **Settings → Pages**.
+3. Select **Deploy from a branch**, `main`, and `/ (root)`.
+
+The demo has no build step or external dependencies. Replace the two PNGs in `assets/` with transparent versions using the same filenames when they are ready.
