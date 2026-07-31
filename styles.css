@@ -571,3 +571,69 @@ footer{grid-template-columns:1fr 1fr;padding:50px 18px}
     to{opacity:1;filter:none}
   }
 }
+
+
+/* RNS DROP 02 — mobile viewport overflow guard v10 */
+html,
+body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+  overscroll-behavior-x:none;
+}
+
+@supports (overflow:clip){
+  html,
+  body{
+    overflow-x:clip;
+  }
+}
+
+.intro,
+.hero,
+.drop,
+.build,
+footer{
+  width:100%;
+  max-width:100%;
+}
+
+.intro,
+.hero{
+  contain:paint;
+}
+
+img,
+svg,
+video{
+  max-width:100%;
+}
+
+@media (max-width:800px){
+  .intro,
+  .hero,
+  main,
+  header,
+  footer{
+    left:0;
+    right:0;
+    max-width:100vw;
+  }
+
+  .drop-title,
+  .product-reveal,
+  .studio-card,
+  .noise,
+  .crt,
+  .boot-flash{
+    max-width:100%;
+    overflow:hidden;
+  }
+
+  .title-block,
+  .reveal-shirt,
+  .stage,
+  .shirt{
+    will-change:transform;
+  }
+}
