@@ -623,11 +623,20 @@ video{
   .drop-title,
   .product-reveal,
   .studio-card,
-  .noise,
   .crt,
   .boot-flash{
     max-width:100%;
     overflow:hidden;
+  }
+
+  /* The grain canvas is intentionally oversized so its jitter never reveals
+     an uncovered strip. Do not constrain it with the page-width guard. */
+  .noise{
+    inset:-50%;
+    width:200%;
+    height:200%;
+    max-width:none;
+    overflow:visible;
   }
 
   .title-block,
@@ -636,4 +645,23 @@ video{
   .shirt{
     will-change:transform;
   }
+}
+
+
+/* RNS DROP 02 — full-screen mobile CRT coverage v11 */
+.intro > .crt,
+.intro > .boot-flash{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+
+.intro > .noise{
+  position:absolute;
+  inset:-50%;
+  width:200%;
+  height:200%;
+  max-width:none;
+  max-height:none;
 }
