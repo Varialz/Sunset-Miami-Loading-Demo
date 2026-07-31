@@ -329,3 +329,52 @@ footer{grid-template-columns:1fr 1fr;padding:50px 18px}
     width:31vw;
   }
 }
+
+
+/* RNS DROP 02 — tighter live-site garment composition v6 */
+@media (min-width:1001px){
+  .stage{
+    left:43%;
+    right:1.5%;
+    overflow:visible;
+  }
+  .s1{
+    left:9%;
+    right:auto;
+    top:17%;
+    width:min(31vw,535px);
+    z-index:2;
+  }
+  .s2{
+    left:auto;
+    right:8%;
+    top:5%;
+    width:min(31vw,535px);
+    z-index:1;
+  }
+  .s1 span{right:auto;left:4%;top:19%}
+  .s2 span{right:2%;top:19%}
+}
+@media (max-width:1000px) and (min-width:801px){
+  .stage{
+    left:39%;
+    right:1%;
+    overflow:visible;
+  }
+  .s1{
+    left:7%;
+    right:auto;
+    top:19%;
+    width:36vw;
+    z-index:2;
+  }
+  .s2{
+    left:auto;
+    right:6%;
+    top:8%;
+    width:36vw;
+    z-index:1;
+  }
+  .s1 span{right:auto;left:4%;top:19%}
+  .s2 span{right:2%;top:19%}
+}
