@@ -289,3 +289,43 @@ footer{grid-template-columns:1fr 1fr;padding:50px 18px}
   .drop-title>span{margin-top:20px}
   .reveal-shirt img{filter:brightness(1.08) saturate(1.06)}
 }
+
+
+/* RNS DROP 02 — side-by-side garment stage v5 */
+@media (min-width:1001px){
+  .stage{
+    left:43%;
+    right:2.5%;
+    overflow:visible;
+  }
+  .s1{
+    left:0;
+    right:auto;
+    top:15%;
+    width:min(27vw,470px);
+  }
+  .s2{
+    left:auto;
+    right:0;
+    top:7%;
+    width:min(27vw,470px);
+  }
+}
+@media (max-width:1000px) and (min-width:801px){
+  .stage{
+    left:40%;
+    right:2%;
+  }
+  .s1{
+    left:0;
+    right:auto;
+    top:18%;
+    width:31vw;
+  }
+  .s2{
+    left:auto;
+    right:0;
+    top:10%;
+    width:31vw;
+  }
+}
