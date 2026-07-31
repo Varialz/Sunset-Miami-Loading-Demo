@@ -438,3 +438,36 @@ footer{grid-template-columns:1fr 1fr;padding:50px 18px}
   .s2{right:0;top:5%;width:60vw}
   .shirt span{font-size:7px;padding:6px 7px;letter-spacing:.12em}
 }
+
+
+/* RNS DROP 02 — mobile title typography and final product mapping v8 */
+@media (max-width:800px){
+  .drop-title strong{
+    margin:12px 0 0;
+    color:#fff8ff;
+    font-family:Impact,"Arial Black","Arial Narrow Bold",sans-serif;
+    font-size:clamp(30px,9.5vw,58px);
+    font-style:italic;
+    font-weight:900;
+    line-height:.82;
+    letter-spacing:.035em;
+    text-transform:uppercase;
+    -webkit-text-stroke:1px #54106f;
+    text-shadow:
+      3px 3px 0 #8a183d,
+      6px 6px 0 var(--orange),
+      0 0 12px rgba(255,122,47,.85),
+      0 0 26px rgba(255,45,149,.72);
+    transform:skew(-7deg);
+  }
+  .title h2 em{
+    font-family:Impact,"Arial Black","Arial Narrow Bold",sans-serif;
+    font-size:.62em;
+    font-style:italic;
+    font-weight:900;
+    letter-spacing:.015em;
+    text-transform:uppercase;
+    -webkit-text-stroke:1px var(--coral);
+    transform:skew(-6deg);
+  }
+}
