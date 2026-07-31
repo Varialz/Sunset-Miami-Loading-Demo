@@ -378,3 +378,63 @@ footer{grid-template-columns:1fr 1fr;padding:50px 18px}
   .s1 span{right:auto;left:4%;top:19%}
   .s2 span{right:2%;top:19%}
 }
+
+
+/* RNS DROP 02 — mobile bounded garment stage v7 */
+@media (max-width:800px){
+  .hero{
+    min-height:860px;
+  }
+  .stage{
+    left:14px;
+    right:14px;
+    top:30%;
+    bottom:18%;
+    overflow:hidden;
+    contain:layout paint;
+  }
+  .shirt{
+    max-width:none;
+    transform-origin:center center;
+  }
+  .s1{
+    left:-1%;
+    right:auto;
+    top:28%;
+    width:57vw;
+    z-index:2;
+  }
+  .s2{
+    left:auto;
+    right:-1%;
+    top:3%;
+    width:59vw;
+    z-index:1;
+  }
+  .s1 span{
+    left:3%;
+    right:auto;
+    top:18%;
+  }
+  .s2 span{
+    left:auto;
+    right:2%;
+    top:18%;
+  }
+  @keyframes float{
+    0%,100%{margin-top:0}
+    50%{margin-top:-10px}
+  }
+}
+
+@media (max-width:430px){
+  .stage{
+    left:8px;
+    right:8px;
+    top:31%;
+    bottom:18%;
+  }
+  .s1{left:0;top:29%;width:58vw}
+  .s2{right:0;top:5%;width:60vw}
+  .shirt span{font-size:7px;padding:6px 7px;letter-spacing:.12em}
+}
